@@ -3,16 +3,17 @@
 
 class Solution:
     def evenlyDivides (self, N):
-        x = N
+        temp = N
         count = 0
-        while (x>0):
-            digit = x%10
-            if digit > 0:
-                if N%digit == 0:
+        while(temp>0):
+            digit = temp%10
+            if digit != 0:
+                if N % digit == 0:
                     count += 1
-            x = x//10
-        return count
-            # code here
+            temp = temp //10        
+         
+        return count    
+        # code here
 
 
 #{ 
@@ -27,4 +28,5 @@ if __name__ == '__main__':
 
         ob = Solution()
         print(ob.evenlyDivides(N))
+        print("~")
 # } Driver Code Ends
