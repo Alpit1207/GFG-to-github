@@ -4,40 +4,36 @@ class Solution:
     
     #Function to return a list containing the union of the two arrays.
     def findUnion(self,a,b):
+        
         # return sorted(list(set(a+b)))
-        i, j = 0, 0
-        result = []
-
+        
+        # -----------------------------------------------------------
+        i,j = 0,0
+        union = []
+        
         while i < len(a) and j < len(b):
-        # Add smaller element
-            if a[i] < b[j]:
-                if not result or result[-1] != a[i]:
-                    result.append(a[i])
-                i += 1
-            elif a[i] > b[j]:
-                if not result or result[-1] != b[j]:
-                    result.append(b[j])
-                j += 1
+            if a[i] < b[j] :
+                if not union or union[-1] != a[i]:
+                    union.append(a[i])
+                i+=1
+            elif b[j] < a[i] :
+                if not union or union[-1] != b[j]:
+                    union.append(b[j])
+                j+=1
             else:
-            # Equal elements - add once
-                if not result or result[-1] != a[i]:
-                    result.append(a[i])
-                i += 1
-                j += 1
-
-    # Append remaining elements from arr1
-        while i < len(a):
-            if result[-1] != a[i] if result else True:
-                result.append(a[i])
-            i += 1
-
-    # Append remaining elements from arr2
-        while j < len(b):
-            if result[-1] != b[j] if result else True:
-                result.append(b[j])
-            j += 1
-
-        return result        
+                if not union or union[-1] != a[i]:
+                    union.append(a[i])
+                i+=1
+                j+=1
+        while i<len(a):
+            if not union or union[-1] != a[i]:
+                union.append(a[i])
+            i+=1
+        while j<len(b):
+            if not union or union[-1] != b[j]:
+                union.append(b[j])
+            j+=1
+        return union    
         # code here 
 
 
