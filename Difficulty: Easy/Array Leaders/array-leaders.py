@@ -1,13 +1,13 @@
 class Solution:
     def leaders(self, arr):
         nums = []
-        max_from_right = float('-inf')
+        max_from_right = float("-inf")
         for i in range(len(arr)-1,-1,-1):
-            if arr[i]>= max_from_right:
+            if arr[i] >= max_from_right:
                 nums.append(arr[i])
                 max_from_right = arr[i]
-                    
-        return nums[::-1]            
+        return nums[::-1]       
+            
         # code here
 
 
